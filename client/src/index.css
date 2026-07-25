@@ -1,0 +1,24 @@
+@import "./styles/variables.css";
+@import "./styles/globals.css";
+@import "./styles/typography.css";
+@import "./styles/utilities.css";
+@import "./styles/animations.css";
+@import "./styles/responsive.css";
+
+.page-section {
+  min-height: 100vh;
+
+  padding: 140px 0 80px;
+}
+
+.page-section h1 {
+  margin-bottom: 1rem;
+}
+
+.page-section p {
+  max-width: 650px;
+
+  line-height: 1.8;
+
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,450 @@
+/* ===========================================================
+   SERVICES SECTION
+=========================================================== */
+
+.services {
+  position: relative;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left,
+      rgba(37, 99, 235, 0.08),
+      transparent 35%),
+    radial-gradient(circle at bottom right,
+      rgba(6, 182, 212, 0.08),
+      transparent 35%);
+}
+
+/* ===========================================================
+   GRID
+=========================================================== */
+
+.services-grid {
+  display: grid;
+  gap: 30px;
+}
+
+/* ===========================================================
+   CARD
+=========================================================== */
+
+.service-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  padding: 34px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.05);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    border-color .45s cubic-bezier(.22,1,.36,1),
+    box-shadow .45s cubic-bezier(.22,1,.36,1);
+}
+
+/* shine */
+
+.service-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.08),
+    transparent);
+
+    transform:translateX(-120%);
+
+    transition:transform .8s ease;
+
+}
+
+.service-card:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ===========================================================
+   ICON
+=========================================================== */
+
+.service-icon{
+
+    width:72px;
+
+    height:72px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-bottom:24px;
+
+    border-radius:20px;
+
+    color:#fff;
+
+    transition:
+    transform .45s cubic-bezier(.22,1,.36,1),
+    box-shadow .45s ease;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:
+    rotate(8deg)
+    scale(1.08);
+
+}
+
+/* ===========================================================
+   WEB
+=========================================================== */
+
+.service-card.web .service-icon{
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#3b82f6);
+
+box-shadow:
+0 0 30px rgba(37,99,235,.35);
+
+}
+
+.service-card.web:hover{
+
+border-color:
+rgba(37,99,235,.40);
+
+box-shadow:
+0 20px 40px rgba(37,99,235,.12);
+
+}
+
+/* ===========================================================
+   IOT
+=========================================================== */
+
+.service-card.iot .service-icon{
+
+background:
+linear-gradient(
+135deg,
+#06b6d4,
+#0891b2);
+
+box-shadow:
+0 0 30px rgba(6,182,212,.35);
+
+}
+
+.service-card.iot:hover{
+
+border-color:
+rgba(6,182,212,.40);
+
+box-shadow:
+0 20px 40px rgba(6,182,212,.12);
+
+}
+
+/* ===========================================================
+   DESIGN
+=========================================================== */
+
+.service-card.design .service-icon{
+
+background:
+linear-gradient(
+135deg,
+#8b5cf6,
+#a855f7);
+
+box-shadow:
+0 0 30px rgba(168,85,247,.35);
+
+}
+
+.service-card.design:hover{
+
+border-color:
+rgba(168,85,247,.40);
+
+box-shadow:
+0 20px 40px rgba(168,85,247,.14);
+
+}
+
+/* ===========================================================
+   TITLE
+=========================================================== */
+
+.service-card h3{
+
+margin-bottom:14px;
+
+font-size:1.5rem;
+
+color:var(--color-heading);
+
+}
+
+/* ===========================================================
+   DESCRIPTION
+=========================================================== */
+
+.service-card p{
+
+margin-bottom:24px;
+
+line-height:1.8;
+
+color:var(--color-text);
+
+}
+
+/* ===========================================================
+   FEATURES
+=========================================================== */
+
+.service-features{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+margin-bottom:30px;
+
+padding:0;
+
+list-style:none;
+
+}
+
+.service-features li{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+color:var(--color-text);
+
+}
+
+.service-features li::before{
+
+content:"✓";
+
+display:grid;
+
+place-items:center;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+font-size:.8rem;
+
+font-weight:700;
+
+background:rgba(37,99,235,.15);
+
+color:#60a5fa;
+
+flex-shrink:0;
+
+}
+
+/* ===========================================================
+   BUTTON
+=========================================================== */
+
+.service-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:auto;
+
+padding:0;
+
+border:none;
+
+background:none;
+
+cursor:pointer;
+
+font-weight:600;
+
+font-size:.95rem;
+
+color:var(--color-primary);
+
+transition:
+gap .3s ease,
+color .3s ease;
+
+}
+
+.service-btn svg{
+
+transition:
+transform .35s ease;
+
+}
+
+.service-btn:hover{
+
+gap:16px;
+
+}
+
+.service-btn:hover svg{
+
+transform:translateX(6px);
+
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+
+@media(min-width:992px){
+
+.services-grid{
+
+grid-template-columns:
+repeat(3,1fr);
+
+}
+
+}
+
+@media(min-width:768px) and (max-width:991px){
+
+.services-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:767px){
+
+.services{
+
+padding:80px 0;
+
+}
+
+.services-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.service-card{
+
+padding:28px;
+
+}
+
+.service-icon{
+
+width:64px;
+
+height:64px;
+
+}
+
+}
+
+/* ===========================================================
+   REDUCED MOTION
+=========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+.service-card,
+.service-icon,
+.service-btn,
+.service-btn svg{
+
+transition:none;
+
+animation:none;
+
+}
+
+.service-card:hover{
+
+transform:none;
+
+}
+
+.service-card:hover .service-icon{
+
+transform:none;
+
+}
+
+.service-btn:hover{
+
+gap:10px;
+
+}
+
+.service-btn:hover svg{
+
+transform:none;
+
+}
+
+}

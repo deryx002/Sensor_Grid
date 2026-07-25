@@ -1,0 +1,197 @@
+/* ==========================================================
+   CONTACT CTA
+========================================================== */
+
+.contact-cta {
+  padding: 100px 0;
+}
+
+.contact-box {
+  position: relative;
+
+  max-width: 900px;
+
+  margin: auto;
+
+  padding: 70px 50px;
+
+  text-align: center;
+
+  border-radius: 32px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(37,99,235,.10),
+      rgba(6,182,212,.08)
+    );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.15);
+}
+
+.contact-box::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.08),
+transparent);
+
+transform:translateX(-120%);
+
+transition:transform .9s ease;
+
+}
+
+.contact-box:hover::before{
+
+transform:translateX(120%);
+
+}
+
+.contact-box h2{
+
+margin:22px 0 18px;
+
+font-size:clamp(2rem,4vw,3rem);
+
+color:var(--color-heading);
+
+}
+
+.contact-box p{
+
+max-width:650px;
+
+margin:auto;
+
+line-height:1.9;
+
+color:var(--color-text);
+
+}
+
+.contact-actions{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:45px;
+
+flex-wrap:wrap;
+
+}
+
+.contact-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:16px 28px;
+
+border-radius:999px;
+
+font-weight:600;
+
+text-decoration:none;
+
+transition:
+transform .35s ease,
+background .35s ease,
+gap .35s ease;
+
+}
+
+.contact-btn.primary{
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#06b6d4);
+
+color:#fff;
+
+}
+
+.contact-btn.secondary{
+
+border:1px solid rgba(255,255,255,.12);
+
+background:rgba(255,255,255,.05);
+
+color:var(--color-heading);
+
+}
+
+.contact-btn:hover{
+
+transform:translateY(-4px);
+
+gap:16px;
+
+}
+
+@media(max-width:768px){
+
+.contact-box{
+
+padding:50px 28px;
+
+}
+
+.contact-actions{
+
+flex-direction:column;
+
+}
+
+.contact-btn{
+
+justify-content:center;
+
+width:100%;
+
+}
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+.contact-box,
+.contact-box::before,
+.contact-btn{
+
+transition:none;
+
+animation:none;
+
+}
+
+.contact-btn:hover{
+
+transform:none;
+
+}
+
+}

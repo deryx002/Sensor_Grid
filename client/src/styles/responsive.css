@@ -1,0 +1,107 @@
+/* ===================================================
+   LARGE DESKTOP
+=================================================== */
+
+@media (min-width:1440px){
+
+    .container{
+
+        max-width:1400px;
+    }
+
+}
+
+/* ===================================================
+   LAPTOP
+=================================================== */
+
+@media (max-width:1200px){
+
+    .grid-4{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+/* ===================================================
+   TABLET
+=================================================== */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:70px 0;
+    }
+
+    .grid-4{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-3{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .grid-2{
+
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:60px 0;
+    }
+
+    .grid-3,
+    .grid-4{
+
+        grid-template-columns:1fr;
+    }
+
+    .container,
+    .container-sm,
+    .container-lg{
+
+        width:94%;
+    }
+
+    .card{
+
+        padding:22px;
+    }
+
+    .btn{
+
+        width:100%;
+    }
+
+}
+
+/* ===================================================
+   SMALL MOBILE
+=================================================== */
+
+@media (max-width:480px){
+
+    html{
+
+        font-size:15px;
+    }
+
+    section{
+
+        padding:50px 0;
+    }
+
+}

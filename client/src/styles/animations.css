@@ -1,0 +1,310 @@
+/* ===================================================
+   FADE UP
+=================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease forwards;
+}
+
+/* ===================================================
+   FADE DOWN
+=================================================== */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+
+}
+
+.fade-down{
+
+    animation:fadeDown .8s ease forwards;
+}
+
+/* ===================================================
+   FADE LEFT
+=================================================== */
+
+@keyframes fadeLeft{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+
+}
+
+.fade-left{
+
+    animation:fadeLeft .8s ease forwards;
+}
+
+/* ===================================================
+   FADE RIGHT
+=================================================== */
+
+@keyframes fadeRight{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(60px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+    }
+
+}
+
+.fade-right{
+
+    animation:fadeRight .8s ease forwards;
+}
+
+/* ===================================================
+   ZOOM IN
+=================================================== */
+
+@keyframes zoomIn{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+    }
+
+}
+
+.zoom-in{
+
+    animation:zoomIn .7s ease forwards;
+}
+
+/* ===================================================
+   FLOAT
+=================================================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+    }
+
+    100%{
+
+        transform:translateY(0);
+    }
+
+}
+
+.float{
+
+    animation:floating 4s ease-in-out infinite;
+}
+
+/* ===================================================
+   PULSE
+=================================================== */
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+    }
+
+    50%{
+
+        transform:scale(1.04);
+    }
+
+    100%{
+
+        transform:scale(1);
+    }
+
+}
+
+.pulse{
+
+    animation:pulse 2s infinite;
+}
+
+/* ===================================================
+   ROTATE
+=================================================== */
+
+@keyframes rotate360{
+
+    from{
+
+        transform:rotate(0deg);
+    }
+
+    to{
+
+        transform:rotate(360deg);
+    }
+
+}
+
+.rotate{
+
+    animation:rotate360 20s linear infinite;
+}
+
+/* ===================================================
+   HOVER EFFECTS
+=================================================== */
+
+.hover-lift{
+
+    transition:var(--transition);
+}
+
+.hover-lift:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+}
+
+.hover-scale{
+
+    transition:var(--transition);
+}
+
+.hover-scale:hover{
+
+    transform:scale(1.05);
+}
+
+.hover-rotate{
+
+    transition:var(--transition);
+}
+
+.hover-rotate:hover{
+
+    transform:rotate(5deg);
+}
+
+/* ===================================================
+   BUTTON EFFECT
+=================================================== */
+
+.btn-animate{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.btn-animate::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.7s;
+}
+
+.btn-animate:hover::before{
+
+    left:120%;
+}
+
+/* ===================================================
+   DELAYS
+=================================================== */
+
+.delay-1{
+
+    animation-delay:.2s;
+}
+
+.delay-2{
+
+    animation-delay:.4s;
+}
+
+.delay-3{
+
+    animation-delay:.6s;
+}
+
+.delay-4{
+
+    animation-delay:.8s;
+}

@@ -1,0 +1,653 @@
+/* ==========================================
+   SERVICES PAGE
+========================================== */
+
+.services-page {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.services-hero {
+  position: relative;
+  padding: 9rem 0 7rem;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left,
+      rgba(37, 99, 235, 0.18),
+      transparent 45%),
+    radial-gradient(circle at bottom right,
+      rgba(14, 165, 233, 0.16),
+      transparent 45%);
+  pointer-events: none;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-hero h1 {
+  margin: 1.5rem 0;
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.services-hero h1 span {
+  display: block;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.services-hero p {
+  max-width: 720px;
+  margin: auto;
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+.services-hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================
+   COMMON SECTIONS
+========================================== */
+
+.services-section,
+.tech-section,
+.process-section,
+.why-section,
+.services-cta {
+  padding: 7rem 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.section-header span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .45rem 1rem;
+  border-radius: 999px;
+  background: rgba(59,130,246,.12);
+  color: var(--color-primary);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.section-header h2 {
+  margin: 1rem 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section-header p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ==========================================
+   SERVICES GRID
+========================================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(18px);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.service-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(59,130,246,.08),
+      transparent 65%
+    );
+
+  opacity: 0;
+
+  transition: opacity .35s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(59,130,246,.35);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-icon {
+  width: 70px;
+
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 1.5rem;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-secondary)
+    );
+
+  color: white;
+
+  box-shadow:
+    0 10px 30px rgba(59,130,246,.25);
+}
+
+.service-card h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.35rem;
+}
+
+.service-card p {
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================
+   TAGS
+========================================== */
+
+.service-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: .7rem;
+}
+
+.service-tags span {
+  padding: .55rem .95rem;
+
+  border-radius: 999px;
+
+  font-size: .82rem;
+
+  background: rgba(59,130,246,.10);
+
+  color: var(--color-primary);
+
+  border: 1px solid rgba(59,130,246,.18);
+
+  transition: .25s;
+}
+
+.service-tags span:hover {
+  background: var(--color-primary);
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+/* ==========================================
+   TECHNOLOGY STACK
+========================================== */
+
+.tech-section {
+  position: relative;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tech-chip {
+  padding: 0.85rem 1.4rem;
+  border-radius: 999px;
+
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(16px);
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  color: var(--color-text);
+
+  transition:
+    transform .3s ease,
+    background .3s ease,
+    color .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.tech-chip:hover {
+  transform: translateY(-5px);
+
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+
+  color: #fff;
+
+  border-color: transparent;
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, .22);
+}
+
+/* ==========================================
+   DEVELOPMENT PROCESS
+========================================== */
+
+.process-section {
+  position: relative;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.process-card {
+  position: relative;
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(18px);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(59, 130, 246, .3);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.08);
+}
+
+.step-number {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 64px;
+  height: 64px;
+
+  margin-bottom: 1.5rem;
+
+  border-radius: 18px;
+
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  color: #fff;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+
+  box-shadow:
+    0 10px 30px rgba(37,99,235,.22);
+}
+
+.process-card h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.35rem;
+}
+
+.process-card p {
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+}
+
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.why-section {
+  position: relative;
+}
+
+.why-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 2rem;
+}
+
+.why-card {
+  position: relative;
+
+  padding: 2rem;
+
+  border-radius: 24px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
+}
+
+.why-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform .35s ease;
+}
+
+.why-card:hover::before {
+  transform: scaleX(1);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(59,130,246,.28);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.08);
+}
+
+.why-card svg {
+  width: 48px;
+  height: 48px;
+
+  margin-bottom: 1.5rem;
+
+  color: var(--color-primary);
+}
+
+.why-card h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.3rem;
+}
+
+.why-card p {
+  color: var(--color-text-muted);
+
+  line-height: 1.8;
+}
+
+/* ==========================================
+   CALL TO ACTION
+========================================== */
+
+.services-cta {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 8rem;
+}
+
+.cta-card {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 4rem 3rem;
+
+  text-align: center;
+
+  border-radius: 32px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.08);
+}
+
+.cta-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59,130,246,.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(14,165,233,.18),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+.cta-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-card h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  margin-bottom: 1.5rem;
+}
+
+.cta-card p {
+  max-width: 760px;
+
+  margin: 0 auto 2rem;
+
+  color: var(--color-text-muted);
+
+  line-height: 1.9;
+}
+
+.cta-card .btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: .75rem;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .services-section,
+  .tech-section,
+  .process-section,
+  .why-section,
+  .services-cta {
+    padding: 5rem 0;
+  }
+
+  .cta-card {
+    padding: 3rem 2rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .services-hero {
+    padding: 7rem 0 5rem;
+  }
+
+  .services-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .services-hero-actions .btn {
+    justify-content: center;
+  }
+
+  .services-grid,
+  .process-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .process-card,
+  .why-card {
+    padding: 1.75rem;
+  }
+
+  .cta-card {
+    padding: 2.5rem 1.5rem;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .services-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .section-header {
+    margin-bottom: 3rem;
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .tech-chip {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+}

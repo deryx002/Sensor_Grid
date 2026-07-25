@@ -1,0 +1,52 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  min-width: 0; /* Prevents flex items from overflowing their container */
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background: var(--bg-secondary);
+  color: var(--text);
+}
+
+/* Semi-transparent backdrop overlay when sidebar is open on mobile */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

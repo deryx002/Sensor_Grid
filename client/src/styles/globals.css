@@ -1,0 +1,339 @@
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+
+  background: var(--bg);
+  color: var(--text);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+/* ==========================================================
+   ROOT
+========================================================== */
+
+#root {
+  min-height: 100vh;
+}
+
+/* ==========================================================
+   MEDIA
+========================================================== */
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  user-select: none;
+}
+
+/* ==========================================================
+   LINKS
+========================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+a:hover {
+  opacity: .9;
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button {
+  font: inherit;
+  color: inherit;
+
+  border: none;
+  outline: none;
+
+  background: none;
+
+  cursor: pointer;
+
+  transition:
+    all var(--transition-fast);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* ==========================================================
+   LISTS
+========================================================== */
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================
+   TABLES
+========================================================== */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ==========================================================
+   HEADINGS
+========================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+
+  color: var(--text);
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ==========================================================
+   SELECTION
+========================================================== */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container {
+  width: min(var(--container), calc(100% - 48px));
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   SECTIONS
+========================================================== */
+
+section {
+  position: relative;
+}
+
+section,
+header,
+footer,
+main,
+nav,
+aside {
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+/* ==========================================================
+   GLASS
+========================================================== */
+
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur-md));
+  -webkit-backdrop-filter: blur(var(--blur-md));
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass:hover {
+  border-color: rgba(34, 211, 238, 0.35);
+  box-shadow: 
+    0 20px 45px rgba(59, 130, 246, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================
+   TEXT HELPERS
+========================================================== */
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================
+   DISPLAY HELPERS
+========================================================== */
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ==========================================================
+   SPACING HELPERS
+========================================================== */
+
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: .5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* ==========================================================
+   SCROLLBAR
+========================================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Firefox */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--surface);
+}
+
+/* ==========================================================
+   FOCUS
+========================================================== */
+
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* ==========================================================
+   REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+/* ==========================================
+   PUBLIC LAYOUT
+========================================== */
+
+.public-main {
+  padding-top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height));
+}
